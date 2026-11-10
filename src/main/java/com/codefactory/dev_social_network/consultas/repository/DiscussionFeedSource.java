@@ -35,7 +35,7 @@ public class DiscussionFeedSource implements FeedSource {
         return rows.stream()
                 .map(r -> new FeedItem(
                         FeedItemType.DISCUSSION,
-                        (Long) r[0],
+                        (UUID) r[0],
                         (String) r[1],
                         (UUID) r[2],
                         (OffsetDateTime) r[3]))

@@ -5,19 +5,20 @@ import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "user_follows")
+@Table(name = "seguidores")
+@IdClass(UserFollowId.class)
 public class UserFollowEntity {
 
     @Id
-    private UUID id;
-
-    @Column(name = "follower_id", nullable = false)
+    @Column(name = "id_seguidor", nullable = false)
     private UUID followerId;
 
-    @Column(name = "followed_id", nullable = false)
+    @Id
+    @Column(name = "id_seguido", nullable = false)
     private UUID followedId;
 
     protected UserFollowEntity() {
