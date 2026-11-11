@@ -9,19 +9,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "discussions")
+@Table(name = "discusiones")
 public class Discussion {
 
     @Id
-    private Long id;
+    private UUID id;
 
-    @Column(name = "user_id", nullable = false)
+    @Column(name = "autor_id", nullable = false)
     private UUID userId;
 
-    @Column(nullable = false, length = 150)
+    @Column(name = "titulo", nullable = false, length = 150)
     private String title;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "fecha_creacion", nullable = false)
     private OffsetDateTime createdAt;
 
     protected Discussion() {

@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public record FeedItem(
         FeedItemType type,
-        Long sourceId,
+        UUID sourceId,
         String title,
         UUID authorId,
         OffsetDateTime createdAt) {

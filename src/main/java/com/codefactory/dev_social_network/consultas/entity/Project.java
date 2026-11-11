@@ -9,19 +9,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "projects")
+@Table(name = "proyectos")
 public class Project {
 
     @Id
-    private Long id;
+    private UUID id;
 
-    @Column(name = "user_id", nullable = false)
+    @Column(name = "usuario_id", nullable = false)
     private UUID userId;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "titulo", nullable = false, length = 50)
     private String title;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "fecha_creacion", nullable = false)
     private OffsetDateTime createdAt;
 
     protected Project() {
